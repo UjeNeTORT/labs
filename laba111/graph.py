@@ -65,7 +65,9 @@ plt.ylabel("Ia, мВ")
 plt.xlim(0, max(U_v_20) + 50)
 plt.ylim(0, max(I_a_20) + 50)
 
+plt.title("Зависимость Ia(Uv)")
 plt.grid(True)
+
 
 plt.legend()
 plt.show()
