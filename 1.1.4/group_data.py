@@ -22,7 +22,12 @@ def sigma_1_2_3(sec, table):
 
     return w
 
+def puasson(x):
+    average = sum(x) / len(x)
 
+    y = [average**x[i]/math.factorial(x[i]) * math.exp(-1 * average) for i in range(len(x))]    
+
+    return y
 
 
 def graph(sec, clr, nbins, label):
@@ -130,16 +135,16 @@ hist_40 = frequency(sec_40)
 
 
 table_10 = graph(sec_10, 'b', len(set(sec_10)), "10 сек")
-distr_10 = np.arange(0, max(sec_10) + 5, 0.01)
-plt.plot(distr_10, norm.pdf(distr_10, table_10["av_n"], table_10["sigma_n"]), color='b', label='10 сек')
+distr_10 = np.arange(0, max(sec_10) + 5, 1)
+plt.plot(sec_10, puasson(sec_10), color='b', label='10 сек')
 
 table_20 = graph(sec_20, 'g', len(set(sec_20)), "20 сек")
-distr_20 = np.arange(0, max(sec_20) + 5, 0.01)
-plt.plot(distr_20, norm.pdf(distr_20, table_20["av_n"], table_20["sigma_n"]), color='g', label='20 сек')
+distr_20 = np.arange(min(sec_20), max(sec_20))
+plt.plot(sec_20, puasson(sec_20), color='g', label='20 сек')
 
 table_40 = graph(sec_40, 'y', len(set(sec_40)), "40 сек")
-distr_40 = np.arange(0, max(sec_40) + 5, 0.01)
-plt.plot(distr_40, norm.pdf(distr_40, table_40["av_n"], table_40["sigma_n"]), color='y', label='40 сек')
+distr_40 = np.arange(0, max(sec_40) + 5, 1)
+plt.plot(sec_40, puasson(sec_40), color='y', label='40 сек')
 
 w_10 = sigma_1_2_3(sec_10, table_10)
 w_20 = sigma_1_2_3(sec_20, table_20)
