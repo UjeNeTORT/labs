@@ -19,7 +19,7 @@ class Experiment:
         self.time = [get_sec(self.df['Time'][i]) for i in range(1, self.nlines + 1)]
         print(f"Time[%d]" % (len(self.time)))
         # return self.time
-
+    
     def read_temperature(self):
         self.resistance = [self.df['Value'][i] for i in range(1, self.nlines + 1)]
         self.temperature = [14.583955001619313455*self.resistance[i] + 39.35514018691588785 for i in range(self.nlines)]
@@ -61,17 +61,17 @@ plt.ylabel("Т, температура в калориметре, К")
 plt.title('Зависимость Т(t)')
 plt.grid(True, linestyle = '--')
 plt.errorbar(Experiment.time, Experiment.temperature, fmt=".", label="Точки")
-plt.axvline(x = 368, color = 'b', label = 'начало нагрева пустого калориметра')
-plt.axvline(x = 1735, color = 'b', label = 'конец нагрева пустого калориметра')
-plt.axvline(x = 1735, color = 'b', label = 'конец остывания пустого калориметра')
+plt.axvline(x = 368, color = 'b')
+plt.axvline(x = 1735, color = 'b')
+plt.axvline(x = 2455, color = 'b', label = 'пустой калориметр')
 
-plt.axvline(x = 3058, color = 'r', label = 'начало нагрева калориметра с медью')
-plt.axvline(x = 4803, color = 'r', label = 'конец нагрева калориметра с медью')
-plt.axvline(x = 4803, color = 'r', label = 'конец остывания калориметра с медью')
+plt.axvline(x = 3058, color = 'r', label = 'медь')
+plt.axvline(x = 4803, color = 'r')
+plt.axvline(x = 4803, color = 'r')
 
-plt.axvline(x = 6348, color = 'g', label = 'начало нагрева калориметра с титаном')
-plt.axvline(x = 7559, color = 'g', label = 'конец нагрева калориметра с титаном')
-plt.axvline(x = 8152, color = 'g', label = 'конец остывания калориметра с титаном')
+plt.axvline(x = 6348, color = 'g', label = 'титан')
+plt.axvline(x = 7559, color = 'g')
+plt.axvline(x = 8152, color = 'g')
 plt.legend()
 plt.show()
 
