@@ -1,0 +1,307 @@
+\documentclass{article}
+\usepackage{blindtext}
+% \usepackage[a4paper, total={6in, 8in}]{geometry}
+
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ bottom=20mm
+ }
+
+\usepackage{wrapfig}
+\usepackage{graphicx}
+\usepackage{mathtext}
+\usepackage{amsmath}
+\usepackage{siunitx} % Required for alignment
+\usepackage{subfigure}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{rotating}
+
+\usepackage[T1,T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{caption}
+
+\graphicspath{{pictures/}}
+
+
+\title{\begin{center}Лабораторная работа №2.3.1\end{center}
+Получение и измерение вакуума}
+\author{Тихонов Я.Д.}
+\date{\today}
+
+\begin{document}
+    \pagenumbering{gobble}
+    \maketitle
+    \pagenumbering{arabic}
+
+\section{Аннотация}
+
+    \paragraph{}
+    \textbf{Цель работы:} определение дифракционного предела разрешения объектива микроскопа методом Аббе.
+
+    \paragraph{}
+    \textbf{В работе используются:} лазер, кассета с набором сеток разного периода, линзы, щель с микрометрическим винтом, оптический стол c набором рейтеров и крепёжных винтов, экран, линейка.
+
+\section{Теоретическая часть}
+ Для иммерсионного микроскопа разрешающая способность объектива при некогерентном
+освещении
+$$
+\ell_{\min } \approx \frac{0.61 \lambda}{n \sin u}
+$$
+где $u-$ апертурный угол объектива микроскопа (угол между оптической осью и лучом, направленным из центра объекта в край линзы).
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\linewidth]{method.png}
+    \caption{Метод Аббе}
+    \label{method}
+\end{figure}
+
+Метод Аббе для оценки разрешающей способности состоит в разделении хода лучей на две части: сначала рассматривается картина в задней фокальной плоскости $F$ объектива (рис. \ref{method}) она называется первичным изображением или фурье-образом. Это первичное изображение рассматривается как источник волн (принцип Гюйгенса-Френеля), создающий изображение в плоскости $P_{2}$, сопряжённой плоскости предмета - вторичное изображение. Первичное изображение есть картина дифракции Фраунгофера (на дифракционной решётке$),$ если её период $d$, то для направления максимальной интенсивности $\varphi_{m}$.
+$$
+d \sin \varphi_{m}=m \lambda
+$$
+При этом проходят пучки только с $\varphi_{m}<u .$ Можно условием разрешения считать, что $u>\varphi_{1}$, иначе говоря
+$$
+\sin u \geq \lambda / d
+$$
+Или
+$$
+d \geq \frac{\lambda}{\sin u} \approx \frac{\lambda}{D / 2 f}
+$$
+где $D-$ диаметр линзы, $f-$ фокусное расстояние. Двумерную решётку можно рассматривать как две перпендикулярные друг другу, для максимумов которых выполняется соотношение
+$$
+d \sin \varphi_{x}=m_{x} \lambda, \quad d \sin \varphi_{y}=m_{y} \lambda
+$$
+
+
+\section{Экспериментальная установка}
+
+Схема установки приведена на рис. \ref{ust}. В кассете $P_1$ расположено 6 сеток, линза Л1 - длиннофокусная, Л2 - короткофокусная.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\linewidth]{ustanovka.png}
+    \caption{Экспериментальная установка}
+    \label{ust}
+\end{figure}
+
+\section{Ход работы}
+\subsection*{I. Определение периода решёток по их пространственному спектру}
+
+Соберём установку согласно описанию. Длина волны излучения лазера $\lambda=532 \mathrm{нм}$
+Расстояние от сетки до экрана $H=100 \pm 2$ см, погрешность объясняется неопределённостью положения сетки внутри кассеты, погрешностью меток на столе, использованных при измерении, и погрешностью прямого измерения. Измерим линейкой на экране расстояние $\Delta x$ между $n+1$ максимумами и рассчитаем по второй формуле с учётом $\varphi=\frac{\Delta x}{H}$ период решетки $d = \frac{n\lambda}{\Delta x}H$. Результаты приведены в Таблице $1 .$
+
+\begin{tabular}{|c|c|c|c|}
+\hline
+Номер &$\Delta x$, см &  n&$d$, мкм\\
+решётки&		&			& \\
+\hline
+1 &	22.7	&6	& 		20	\\
+\hline
+2&	22.6	&	9	&	30		\\
+\hline
+3&	25.1	&20		&	60		\\
+\hline
+4&	22.5	&	35	&	117		\\
+\hline
+5&	22.7	&	48	&		159	\\
+\hline
+\end{tabular}
+\newline
+
+
+
+
+
+\subsection*{II. Определение периода решёток по изображению, увеличенному с помощью модели микроскопа}
+
+Соберём модель микроскопа, добавив линзы согласно Рис. 1. Фокусные расстояния линз $F_{1}=  $ мм, $F_{2}= $ мм. Измеряем необходимые расстояния:
+$$
+\begin{aligned}
+a_{1} &= 120  \pm 10 \mathrm{мм}, \\
+a_{2}+b_{1} &= 455 \pm 10 \mathrm{см}, \\
+b_{2} &= 815 \pm 10 \mathrm{см},
+\end{aligned}
+$$
+Погрешности здесь обусловлены неточностями в положенияъ сеток и линз. Из формулы тонкой линзы \fbox{$a_{2}=\frac{b_{2} F_{2}}{b_{2}-F_{2}}=25.79$ мм}, откуда \fbox{$a_{2} \approx F_{2}$}, поэтому в дальнейшем будем использовать это значение, следовательно $b_{1}= 420\pm 10$ мм.  Увеличение микроскопа \fbox{$ \Gamma=\frac{b_{1} b_{2}}{a_{1} a_{2}}=114 \pm 10 .$}
+
+Повторим измерения периодов изображений в новой конфигурации, погрешности считаются аналогично. Измерение представлены в Таблице $2 .$
+
+Здесь $d$ определялось по формуле $d=\frac{\Delta x}{\Gamma n}$. Обратим внимание, что значения периодов решётки совпадают в пределах погрешности.
+
+\begin{minipage}{0.47\textwidth}
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+Номер &$\Delta x$, см &  n&$d$, мкм\\
+решётки&		&			& \\
+\hline
+1 &	3.7	&	16	& 	20		\\
+\hline
+2&	15.7	&	49	&	28		\\
+\hline
+3&	25.3	&	38	&	58		\\
+\hline
+4&	24.1	&	18	&	117		\\
+\hline
+5&	23.6	&	13	&	159	 	\\
+\hline
+\end{tabular}
+\newline
+\newline
+Таблица 2.
+\end{center}
+\end{minipage}
+\begin{minipage}{0.47\textwidth}
+\begin{center}
+\includegraphics[width = \textwidth]{3.JPG}
+\end{center}
+
+\begin{center}
+Увеличенное изображение сетки.
+\end{center}
+\end{minipage}
+
+\newpage
+
+\subsection*{III. Определение периода решёток по оценке разрешающей способности микроскопа}
+
+Поместим в фокальной плоскости линзы $Л_{1}$ щелевую диафрагму с микрометрическим винтом и определим минимальную толщину $D$ при которой на экране видна двумерная решётка. В этом случае период будет вычисляться по формуле (3) в предельном случае
+$$
+d=\frac{2 \lambda F_{1}}{D}
+$$
+погрешность вычисляется по формуле
+$$
+\sigma_{d}=d \frac{\sigma_{D}}{D} .
+$$
+Результаты приведены в Таблице $3 .$
+
+
+
+\begin{minipage}{0.47\textwidth}
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+Номер &D , мм &  1/D, мм&$d$, мкм\\
+решётки&		&			& \\
+\hline
+1 &--		&	--	& 		--	\\
+\hline
+2&	4.14	&	0.242	&	28.3		\\
+\hline
+3&	1.96	&	0.510	&	59.7		\\
+\hline
+4&	1.02	&	0.980	&	114.7		\\
+\hline
+5&	0.81	&	1.240	&		144.5	\\
+\hline
+\end{tabular}
+\newline
+\newline
+Таблица 3.
+\end{center}
+\end{minipage}
+\begin{minipage}{0.47\textwidth}
+\begin{center}
+		\begin{tikzpicture}[scale = 1.0]
+		\begin{axis}[
+		axis lines = left,
+		ylabel = {d, мкм},
+		xlabel = {1/D, мм},
+		minor grid style={black, line width=0.05pt},
+		major grid style={solid,black, line width=0.3pt},
+		xmin=0, xmax=1.4,
+		ymin=0, ymax=160,
+		ymajorgrids = true,
+		xmajorgrids = true,
+		yminorgrids = true,
+		xminorgrids = true,
+		minor tick num = 4
+		]
+		\addplot+[only marks ] plot[error bars/.cd, y dir=both, y explicit]
+		coordinates {
+			(0.242,28.3)
+			(0.510,59.7)
+			(0.980,114.7)
+			(1.24,144.5)
+		};
+
+		\addplot[blue, domain=0:8]{120.43*x };
+		\end{axis}
+
+		\end{tikzpicture}
+
+Зависимость $d=f(1 / D)$.
+
+\end{center}
+\end{minipage}
+
+\newline
+\
+\newline
+
+
+Через щель проходили только нулевой (по центру) и два первых максимумы, за исключением второй щели, где нулевой максимум был помещён к краю щели. Для первой решётки
+период таким методом измерить не получилось, так как ширины щели не хватает.
+
+Для проверки теории Аббе построим график $d=f\left(\frac{1}{D}\right)$ со значениями $d$ из части 1, погрешность $\frac{1}{D}$ рассчитывается по формуле
+$$
+\sigma_{1 / D}=\frac{\sigma_{D}}{D^{2}}
+$$
+Угловой коэффициент прямой из $\mathrm{MHK}\ k=(124 \pm 8) \cdot 10^{-9} м^{2}$, в пределах погрешности он совпадает с теоретическим $2 \lambda F_{1}= 117\cdot 10^{-9} м^{2} .$ Таким образом, теория Аббе подтвердилась.
+
+
+\newpage
+
+ \subsection*{IV. Пространственная фильтрация и мультиплицирование}
+
+ Для наблюдения фильтрации на сетке 2 откроем щель так, чтобы она пропускала только максимум нулевого порядка и, поворачивая щель, наблюдаем за изменением картины. Картины представлены на рисунках ниже. \\
+
+ \begin{minipage}{0.47\textwidth}
+\begin{center}
+\includegraphics[width = \textwidth]{4.JPG}
+\end{center}
+
+\begin{center}
+Горизонатальная щель $\left(0, m_{y}\right)$.
+\end{center}
+\end{minipage}
+\begin{minipage}{0.47\textwidth}
+\begin{center}
+\includegraphics[width = 0.95\textwidth]{6.JPG}
+\end{center}
+
+\begin{center}
+Щель, повернутая на $45^{\circ}\left(m_{x}=m_{y}\right)$.
+\end{center}
+\end{minipage}
+
+
+ \begin{minipage}{0.47\textwidth}
+\begin{center}
+ Для наблюдения мультиплицированния поменяем местами сетку и щель, пронаблюлюдаем мультипликацию, картина представлена на Рис. $4 .$
+
+\end{center}
+\end{minipage}
+\begin{minipage}{0.47\textwidth}
+\begin{center}
+
+\includegraphics[width = \textwidth]{5.JPG}
+\end{center}
+
+\begin{center}
+Схема для наблюдения интерфереционной картины.
+
+\end{center}
+\end{minipage}
+
+
+\section{Вывод}
+
+
+\end{document}
