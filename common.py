@@ -38,7 +38,7 @@ def linear_graph(x, y, xerr, yerr, xlabel, ylabel, title):
   # Generate smooth values for the fitted line
   x_fit = np.linspace(min(x), max(x), 100)
   y_fit = linear_fit(x_fit)
-  plt.plot(x_fit, y_fit, 'r', label=f'МНК: $\\varepsilon (v) = {coeffs[0]:.4f} \\cdot v + {coeffs[1]:.4f}$')
+  plt.plot(x_fit, y_fit, 'r', label=f'МНК: $\\varepsilon (v) = {coeffs[0]:.4f} \\cdot v + {coeffs[2]:.4f}$')
 
   plt.xlabel(xlabel)
   plt.ylabel(ylabel)
