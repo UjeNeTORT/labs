@@ -27,7 +27,7 @@ def linear_graph(x, y, xerr, yerr, xlabel, ylabel, title):
   yerr_ = np.array(yerr)
 
   plt.figure(figsize=(8, 5))
-  plt.errorbar(x=x_, y=y_, xerr=xerr_, yerr=yerr_, fmt='.', capsize=8,
+  plt.errorbar(x=x_, y=y_, xerr=xerr_, yerr=yerr_, fmt='.',
     label=r'Экспериментальные точки')
 
   # Linear fit (МНК)
@@ -38,7 +38,7 @@ def linear_graph(x, y, xerr, yerr, xlabel, ylabel, title):
   # Generate smooth values for the fitted line
   x_fit = np.linspace(min(x), max(x), 100)
   y_fit = linear_fit(x_fit)
-  plt.plot(x_fit, y_fit, 'r', label=f'МНК: $\\varepsilon (v) = {coeffs[0]:.4f} \\cdot v + {coeffs[2]:.4f}$')
+  plt.plot(x_fit, y_fit, 'r', label=f'МНК: $y (x) = {coeffs[0]:.4f} \\cdot x + {coeffs[2]:.4f}$')
 
   plt.xlabel(xlabel)
   plt.ylabel(ylabel)
@@ -111,7 +111,7 @@ def latex_measurement(var_name, value, value_err, units, precision=3):
     )
 
     print(latex_str)
-    return latex_str
+    # return latex_str
 
 if __name__ == '__main__':
    print("the file is a library, dont execute")
